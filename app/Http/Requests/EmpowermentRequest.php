@@ -52,6 +52,6 @@ class EmpowermentRequest extends FormRequest
      */
     protected function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json(['status' => false, 'errors' => $validator->errors()], 422));
+        throw new HttpResponseException(response()->json(['status' => false, 'message' => $validator->errors()]));
     }
 }

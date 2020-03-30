@@ -43,6 +43,6 @@ class EmpowermentController extends Controller
 
         $token = JWTAuth::fromUser($user);
 
-        return response()->json(compact('user', 'token', ['status' => true]), 201);
+        return response()->json(['status' => true, "data" => compact('user', 'token')], 201);
     }
 }
